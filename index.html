@@ -3,94 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free NFT and Crypto</title>
+    <title>Claim Free NFT & Crypto</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             color: white;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 600px;
-            margin: 50px auto;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
             border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
 
         h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
+            background: -webkit-linear-gradient(45deg, #ff9a9e, #fad0c4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         p {
             font-size: 1.2rem;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         input[type="text"], input[type="email"] {
             width: 100%;
-            padding: 10px;
+            padding: 15px;
             margin: 10px 0;
             border: none;
             border-radius: 5px;
             font-size: 1rem;
+            outline: none;
+            background: #f3f3f3;
+            color: #333;
         }
 
         button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
+            padding: 15px 20px;
+            background-color: #ff4b2b;
             color: white;
             border: none;
             border-radius: 5px;
             font-size: 1.2rem;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: 0.3s;
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #ff6f61;
         }
 
-        footer {
+        .footer {
             margin-top: 20px;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .success-message {
+            color: #4CAF50;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .error-message {
+            color: #FF6F61;
+            font-weight: bold;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Claim Your Free NFT and Crypto!</h1>
-        <p>Sign up now to receive exclusive NFTs and free crypto directly to your wallet!</p>
+        <h1>Claim Your Free NFT & Crypto</h1>
+        <p>Sign up now and receive exclusive NFTs and crypto directly to your wallet. Limited-time offer!</p>
         <form id="signupForm">
             <input type="text" id="walletAddress" placeholder="Enter your crypto wallet address" required>
-            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="email" id="email" placeholder="Enter your email address" required>
             <button type="submit">Claim Now</button>
         </form>
-        <p id="message" style="margin-top: 20px; font-size: 1rem;"></p>
+        <div id="message"></div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Crypto Rewards. All rights reserved.</p>
+    <footer class="footer">
+        &copy; 2024 Crypto Rewards Platform. All rights reserved.
     </footer>
 
     <script>
         document.getElementById('signupForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            const walletAddress = document.getElementById('walletAddress').value;
-            const email = document.getElementById('email').value;
+
+            const walletAddress = document.getElementById('walletAddress').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message');
 
             if (walletAddress && email) {
-                document.getElementById('message').textContent = 'Success! Your rewards will be sent to your wallet soon.';
-                document.getElementById('message').style.color = 'lightgreen';
+                // Simulate a success response
+                message.textContent = 'Success! Your NFT and crypto will be sent to your wallet shortly.';
+                message.className = 'success-message';
+
+                // Clear the form
+                document.getElementById('walletAddress').value = '';
+                document.getElementById('email').value = '';
             } else {
-                document.getElementById('message').textContent = 'Please fill in all fields.';
-                document.getElementById('message').style.color = 'red';
+                message.textContent = 'Error: Please fill in all fields correctly.';
+                message.className = 'error-message';
             }
         });
     </script>
