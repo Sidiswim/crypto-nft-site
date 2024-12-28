@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto & NFT Platform</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+        header {
+            background-color: #5c6bc0;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #3949ab;
+            padding: 1rem;
+        }
+        nav a {
+            color: white;
+            margin: 0 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem;
+            background: linear-gradient(145deg, #3949ab, #283593);
+            color: white;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+        }
+        .hero p {
+            font-size: 1.5rem;
+        }
+        .offer {
+            text-align: center;
+            background-color: #e53935;
+            color: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+        .offer h2 {
+            font-size: 2.5rem;
+        }
+        .offer p {
+            font-size: 1.2rem;
+        }
+        .offer button {
+            background-color: #d32f2f;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .offer button:hover {
+            background-color: #e53935;
+        }
+        .container {
+            padding: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .story, .how-it-works, .testimonials, .faq, .wallet {
+            margin-bottom: 3rem;
+            background: #1e1e1e;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #5c6bc0;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+        .countdown {
+            font-size: 1.5rem;
+            color: #ffab00;
+            text-align: center;
+        }
+        .wallet-connect {
+            text-align: center;
+            background-color: #4fc3f7;
+            color: white;
+            padding: 3rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+        .wallet-connect h2 {
+            font-size: 2.5rem;
+        }
+        .wallet-connect form {
+            margin: 1rem auto;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+        .wallet-connect input {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+        }
+        .wallet-connect button {
+            background-color: #0288d1;
+            color: white;
+            padding: 1rem;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .wallet-connect button:hover {
+            background-color: #03a9f4;
+        }
+    </style>
+    <script>
+        function startCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            const endDate = new Date().getTime() + 3600 * 1000; // 1 hour countdown
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const timeLeft = endDate - now;
+
+                if (timeLeft > 0) {
+                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                    countdownElement.innerText = `Offer ends in: ${minutes}m ${seconds}s`;
+                } else {
+                    countdownElement.innerText = "Offer has ended.";
+                }
+            }
+
+            setInterval(updateCountdown, 1000);
+        }
+
+        document.addEventListener('DOMContentLoaded', startCountdown);
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Discover the Future of Finance with Crypto & NFTs</h1>
+        <p>Claim your exclusive rewards and join the revolution!</p>
+    </header>
+    <nav>
+        <a href="#story">Our Story</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#wallet">Wallet</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+    <section class="hero">
+        <h1>Empower Your Future with Blockchain</h1>
+        <p>Join thousands of users unlocking new financial opportunities. Start today!</p>
+    </section>
+    <div class="offer">
+        <h2>Limited Time Offer</h2>
+        <p id="countdown">Loading countdown...</p>
+        <button>Claim Your Free NFT</button>
+    </div>
+    <div class="container">
+        <section id="story" class="story">
+            <h2>Our Story</h2>
+            <p>Founded on the principle of financial inclusion, we strive to make crypto and NFTs accessible to everyone. With cutting-edge technology and a user-first approach, our platform is your gateway to the decentralized economy.</p>
+        </section>
+        <section id="how-it-works" class="how-it-works">
+            <h2>How It Works</h2>
+            <p>1. Create an account in seconds.<br>2. Connect your wallet seamlessly.<br>3. Unlock your free NFT and explore our marketplace.<br>4. Achieve your financial goals with our innovative tools.</p>
+        </section>
+        <section id="testimonials" class="testimonials">
+            <h2>User Success Stories</h2>
+            <blockquote>
+                "A game-changer for my finances. Highly recommended!" - Alex B.
+            </blockquote>
+            <blockquote>
+                "Intuitive and rewarding. The best platform out there." - Jamie L.
+            </blockquote>
+        </section>
+        <section id="wallet" class="wallet-connect">
+            <h2>Connect Your Wallet</h2>
+            <form>
+                <label for="wallet-key">Enter your Wallet Key:</label>
+                <input type="text" id="wallet-key" placeholder="Your wallet key">
+                <button type="button">Connect Wallet</button>
+            </form>
+        </section>
+        <section id="faq" class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <p><strong>Q:</strong> What is a wallet key?<br><strong>A:</strong> A wallet key allows you to securely access your crypto funds.</p>
+            <p><strong>Q:</strong> How do I claim my free NFT?<br><strong>A:</strong> Simply sign up, connect your wallet, and the NFT will be sent to your account.</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Crypto & NFT Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>
