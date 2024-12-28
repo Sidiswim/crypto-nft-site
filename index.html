@@ -3,127 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claim Free NFT & Crypto</title>
+    <title>Crypto & NFT Success</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-
-        .container {
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 15px;
-            padding: 30px;
-            width: 90%;
-            max-width: 500px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            background: -webkit-linear-gradient(45deg, #ff9a9e, #fad0c4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        input[type="text"], input[type="email"] {
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            outline: none;
-            background: #f3f3f3;
+            background-color: #f4f4f4;
             color: #333;
         }
-
-        button {
-            padding: 15px 20px;
-            background-color: #ff4b2b;
+        header {
+            background-color: #2c3e50;
             color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: 0.3s;
+            padding: 1rem;
+            text-align: center;
         }
-
-        button:hover {
-            background-color: #ff6f61;
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #34495e;
+            padding: 0.5rem;
         }
-
-        .footer {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #aaa;
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
         }
-
-        .success-message {
-            color: #4CAF50;
-            font-weight: bold;
-            margin-top: 20px;
+        nav a:hover {
+            text-decoration: underline;
         }
-
-        .error-message {
-            color: #FF6F61;
-            font-weight: bold;
-            margin-top: 20px;
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            background: url('crypto-nft-bg.jpg') no-repeat center center/cover;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        .hero p {
+            font-size: 1.5rem;
+        }
+        .container {
+            padding: 2rem;
+        }
+        .story, .how-it-works, .testimonials, .faq {
+            margin-bottom: 2rem;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Unlock Your Financial Freedom</h1>
+        <p>The Ultimate Crypto and NFT Platform</p>
+    </header>
+    <nav>
+        <a href="#story">Our Story</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+    <section class="hero">
+        <h1>Your Journey to Wealth Starts Here</h1>
+        <p>Discover how our users are transforming their lives with crypto and NFTs.</p>
+    </section>
     <div class="container">
-        <h1>Claim Your Free NFT & Crypto</h1>
-        <p>Sign up now and receive exclusive NFTs and crypto directly to your wallet. Limited-time offer!</p>
-        <form id="signupForm">
-            <input type="text" id="walletAddress" placeholder="Enter your crypto wallet address" required>
-            <input type="email" id="email" placeholder="Enter your email address" required>
-            <button type="submit">Claim Now</button>
-        </form>
-        <div id="message"></div>
+        <section id="story" class="story">
+            <h2>Our Story</h2>
+            <p>Once upon a time, our founders started with a simple dream: to help everyday people achieve financial success. Armed with passion and cutting-edge technology, they built a platform where anyone can buy, sell, and trade crypto and NFTs effortlessly. Today, our platform has changed thousands of lives, and yours could be next!</p>
+        </section>
+        <section id="how-it-works" class="how-it-works">
+            <h2>How It Works</h2>
+            <p>1. Sign up and create your free account.<br>2. Browse our marketplace for exclusive NFTs and top-performing cryptocurrencies.<br>3. Invest with confidence using our user-friendly tools and expert insights.<br>4. Watch your portfolio grow and start living your dreams!</p>
+        </section>
+        <section id="testimonials" class="testimonials">
+            <h2>What Our Users Say</h2>
+            <blockquote>
+                "I never thought I'd be able to quit my 9-to-5, but this platform made it possible!" - Alex R.
+            </blockquote>
+            <blockquote>
+                "Investing in NFTs seemed complicated, but this site made it so easy. Highly recommend!" - Jordan T.
+            </blockquote>
+        </section>
+        <section id="faq" class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <p><strong>Q:</strong> Do I need prior experience with crypto or NFTs?<br><strong>A:</strong> Not at all! Our platform is designed for beginners and experts alike.</p>
+            <p><strong>Q:</strong> Is my investment secure?<br><strong>A:</strong> Absolutely. We use top-notch security protocols to protect your assets.</p>
+        </section>
     </div>
-
-    <footer class="footer">
-        &copy; 2024 Crypto Rewards Platform. All rights reserved.
+    <footer>
+        <p>&copy; 2024 Crypto & NFT Success. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.getElementById('signupForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const walletAddress = document.getElementById('walletAddress').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message');
-
-            if (walletAddress && email) {
-                // Simulate a success response
-                message.textContent = 'Success! Your NFT and crypto will be sent to your wallet shortly.';
-                message.className = 'success-message';
-
-                // Clear the form
-                document.getElementById('walletAddress').value = '';
-                document.getElementById('email').value = '';
-            } else {
-                message.textContent = 'Error: Please fill in all fields correctly.';
-                message.className = 'error-message';
-            }
-        });
-    </script>
 </body>
 </html>
