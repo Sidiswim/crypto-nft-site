@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free NFT and Crypto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Claim Your Free NFT and Crypto!</h1>
+        <p>Sign up now to receive exclusive NFTs and free crypto directly to your wallet!</p>
+        <form id="signupForm">
+            <input type="text" id="walletAddress" placeholder="Enter your crypto wallet address" required>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">Claim Now</button>
+        </form>
+        <p id="message" style="margin-top: 20px; font-size: 1rem;"></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Crypto Rewards. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const walletAddress = document.getElementById('walletAddress').value;
+            const email = document.getElementById('email').value;
+
+            if (walletAddress && email) {
+                document.getElementById('message').textContent = 'Success! Your rewards will be sent to your wallet soon.';
+                document.getElementById('message').style.color = 'lightgreen';
+            } else {
+                document.getElementById('message').textContent = 'Please fill in all fields.';
+                document.getElementById('message').style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>
