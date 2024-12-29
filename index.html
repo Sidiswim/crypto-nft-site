@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Rewards Platform</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #1a1a2e;
+            color: #fff;
+            height: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 1000;
+        }
+
+        .nav-bar a {
+            color: #00d9ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 40px;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .page h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            background-color: #00d9ff;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .cta-btn:hover {
+            background-color: #00a3cc;
+        }
+
+        .falling-snow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        @keyframes snow {
+            0% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            opacity: 0.8;
+            border-radius: 50%;
+            animation: snow 10s linear infinite;
+        }
+
+        .snowflake:nth-child(odd) {
+            animation-duration: 15s;
+        }
+
+        .snowflake:nth-child(even) {
+            animation-duration: 8s;
+        }
+
+        .info {
+            max-width: 800px;
+            text-align: center;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        .reward-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .reward-box {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s;
+        }
+
+        .reward-box:hover {
+            transform: scale(1.1);
+        }
+
+        .reward-img {
+            background: url('https://via.placeholder.com/800x400.png?text=Crypto+Rewards') no-repeat center/cover;
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        @keyframes changeBackgroundColor {
+            0% { background: #1a1a2e; }
+            25% { background: #16213e; }
+            50% { background: #0f0f29; }
+            75% { background: #2f2f4e; }
+            100% { background: #1a1a2e; }
+        }
+
+        /* Apply background animation */
+        body {
+            animation: changeBackgroundColor 10s infinite;
+        }
+
+        /* Nouveau style pour les blocs de connexion */
+        .connect-box {
+            background: rgba(173, 216, 230, 0.8); /* Bleu pâle avec transparence */
+            padding: 20px 30px;
+            border-radius: 12px;
+            margin: 10px;
+            text-align: center;
+            width: 230px;
+            cursor: pointer;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+            transition: background 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .connect-box:hover {
+            background: rgba(135, 206, 235, 0.9); /* Un bleu plus accentué */
+            transform: scale(1.05);
+            box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Snow effect stretching all the way down */
+        .falling-snow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .falling-snow .snowflake {
+            animation: snow 10s linear infinite;
+        }
+
+        .falling-snow .snowflake:nth-child(odd) {
+            animation-duration: 15s;
+        }
+
+        .falling-snow .snowflake:nth-child(even) {
+            animation-duration: 12s;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="fallingSnow" class="falling-snow"></div>
+
+    <div class="nav-bar">
+        <div>
+            <a href="#home">Home</a>
+            <a href="#rewards">Rewards</a>
+            <a href="#dashboard">Dashboard</a>
+        </div>
+        <button class="cta-btn" onclick="connectMetaMask()">Connect Wallet</button>
+    </div>
+
+    <section id="home" class="page">
+        <h1>Welcome to Crypto Rewards!</h1>
+        <div class="reward-img"></div>
+        <p class="info">Join our platform to earn free rewards and experience the future of decentralized finance. Connect your wallet and start earning today!</p>
+        <div class="connect-box" onclick="connectMetaMask()">Connect to Earn Rewards</div>
+    </section>
+
+    <section id="rewards" class="page">
+        <h1>Earn Free Rewards</h1>
+        <div class="info">
+            Stake your tokens and participate in our daily reward programs. The more you engage, the higher the rewards!
+        </div>
+        <div class="reward-info">
+            <div class="reward-box">
+                <h3>Daily Bonus</h3>
+                <p>Log in daily to claim free tokens!</p>
+            </div>
+            <div class="reward-box">
+                <h3>Staking Rewards</h3>
+                <p>Earn up to 15% APY by staking your assets.</p>
+            </div>
+            <div class="reward-box">
+                <h3>Referral Program</h3>
+                <p>Invite friends and earn additional bonuses.</p>
+            </div>
+        </div>
+        <div class="connect-box" onclick="connectMetaMask()">Connect to Claim Rewards</div>
+    </section>
+
+    <section id="dashboard" class="page">
+        <h1>Your Dashboard</h1>
+        <div class="info">
+            <h3>Exclusive Benefits Await!</h3>
+            <p>Connect your wallet to explore rewards, swap tokens, and more. Every action brings more perks!</p>
+        </div>
+        <div class="connect-box" onclick="connectMetaMask()">Connect to Your Dashboard</div>
+    </section>
+
+    <script>
+        function createSnow() {
+            const snowContainer = document.getElementById('fallingSnow');
+            for (let i = 0; i < 200; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.style.left = Math.random() * window.innerWidth + 'px';
+                snowflake.style.animationDelay = Math.random() * 5 + 's';
+                snowflake.style.animationDuration = Math.random() * 5 + 5 + 's';
+                snowContainer.appendChild(snowflake);
+            }
+        }
+
+        createSnow();
+
+        async function connectMetaMask() {
+            if (window.ethereum) {
+                try {
+                    const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                    alert(`Connected: ${accounts[0]}`);
+                } catch (error) {
+                    console.error('Error connecting to MetaMask', error);
+                }
+            } else {
+                alert('MetaMask is not installed. Please install it to use this feature.');
+            }
+        }
+    </script>
+</body>
+</html>
