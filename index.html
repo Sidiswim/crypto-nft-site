@@ -3,40 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto & NFT Platform</title>
+    <title>Crypto & NFT Marketplace</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #f5f5f5;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            overflow-x: hidden;
         }
         header {
-            background-color: #5c6bc0;
+            background: linear-gradient(90deg, #6f42c1, #0366d6);
             color: white;
             padding: 2rem;
             text-align: center;
         }
         nav {
             display: flex;
-            justify-content: center;
-            background-color: #3949ab;
-            padding: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #161b22;
+            padding: 1rem 10%;
+            border-bottom: 2px solid #30363d;
         }
         nav a {
-            color: white;
-            margin: 0 1.5rem;
+            color: #58a6ff;
+            margin: 0 1rem;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #79c0ff;
         }
         .hero {
             text-align: center;
-            padding: 4rem;
-            background: linear-gradient(145deg, #3949ab, #283593);
+            padding: 5rem 2rem;
+            background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
             color: white;
         }
         .hero h1 {
@@ -44,171 +48,169 @@
         }
         .hero p {
             font-size: 1.5rem;
+            margin-top: 1rem;
         }
-        .offer {
-            text-align: center;
-            background-color: #e53935;
-            color: white;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 10px;
+        .cta {
+            margin-top: 2rem;
         }
-        .offer h2 {
-            font-size: 2.5rem;
-        }
-        .offer p {
-            font-size: 1.2rem;
-        }
-        .offer button {
-            background-color: #d32f2f;
-            color: white;
-            padding: 1rem 2rem;
+        .cta button {
+            background-color: #58a6ff;
+            color: #0d1117;
+            padding: 1rem 2.5rem;
             border: none;
-            font-size: 1rem;
+            font-size: 1.2rem;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
         }
-        .offer button:hover {
-            background-color: #e53935;
+        .cta button:hover {
+            background-color: #79c0ff;
         }
         .container {
-            padding: 3rem;
+            padding: 2rem 10%;
             max-width: 1200px;
             margin: 0 auto;
         }
-        .story, .how-it-works, .testimonials, .faq, .wallet {
-            margin-bottom: 3rem;
-            background: #1e1e1e;
+        .section {
+            background-color: #161b22;
+            border-radius: 10px;
             padding: 2rem;
-            border-radius: 10px;
-        }
-        footer {
-            background-color: #5c6bc0;
-            color: white;
-            text-align: center;
-            padding: 1.5rem 0;
-        }
-        .countdown {
-            font-size: 1.5rem;
-            color: #ffab00;
-            text-align: center;
-        }
-        .wallet-connect {
-            text-align: center;
-            background-color: #4fc3f7;
-            color: white;
-            padding: 3rem;
             margin: 2rem 0;
-            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
-        .wallet-connect h2 {
-            font-size: 2.5rem;
+        .section h2 {
+            color: #c9d1d9;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
-        .wallet-connect form {
-            margin: 1rem auto;
-            max-width: 400px;
+        .section p {
+            line-height: 1.8;
+        }
+        .wallet-connection {
             display: flex;
+            justify-content: center;
+            align-items: center;
             flex-direction: column;
         }
-        .wallet-connect input {
-            padding: 1rem;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            border-radius: 5px;
+        .wallet-connection button {
+            background-color: #238636;
+            color: #ffffff;
+            padding: 1rem 2rem;
             border: none;
-        }
-        .wallet-connect button {
-            background-color: #0288d1;
-            color: white;
-            padding: 1rem;
-            font-size: 1rem;
-            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
             cursor: pointer;
-            border-radius: 5px;
+            margin: 1rem 0;
+            transition: background-color 0.3s ease;
         }
-        .wallet-connect button:hover {
-            background-color: #03a9f4;
+        .wallet-connection button:hover {
+            background-color: #2ea043;
+        }
+        footer {
+            background-color: #161b22;
+            color: #8b949e;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        footer a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            color: #79c0ff;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero {
+                padding: 3rem 1rem;
+            }
+            .cta button {
+                padding: 0.8rem 1.5rem;
+            }
+            .container {
+                padding: 2rem;
+            }
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
     <script>
-        function startCountdown() {
-            const countdownElement = document.getElementById('countdown');
-            const endDate = new Date().getTime() + 3600 * 1000; // 1 hour countdown
-
-            function updateCountdown() {
-                const now = new Date().getTime();
-                const timeLeft = endDate - now;
-
-                if (timeLeft > 0) {
-                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                    countdownElement.innerText = `Offer ends in: ${minutes}m ${seconds}s`;
-                } else {
-                    countdownElement.innerText = "Offer has ended.";
+        async function connectMetaMask() {
+            if (window.ethereum) {
+                try {
+                    const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                    document.getElementById('wallet-address').innerText = `Connected Wallet: ${accounts[0]}`;
+                } catch (error) {
+                    alert('Error connecting wallet');
                 }
+            } else {
+                alert('Please install MetaMask!');
             }
-
-            setInterval(updateCountdown, 1000);
         }
-
-        document.addEventListener('DOMContentLoaded', startCountdown);
     </script>
 </head>
 <body>
     <header>
-        <h1>Discover the Future of Finance with Crypto & NFTs</h1>
-        <p>Claim your exclusive rewards and join the revolution!</p>
+        <h1>Crypto & NFT Marketplace</h1>
+        <p>Explore, trade, and earn with the most intuitive and secure platform</p>
     </header>
     <nav>
-        <a href="#story">Our Story</a>
         <a href="#how-it-works">How It Works</a>
+        <a href="#features">Features</a>
+        <a href="#connect">Connect Wallet</a>
         <a href="#testimonials">Testimonials</a>
-        <a href="#wallet">Wallet</a>
-        <a href="#faq">FAQ</a>
     </nav>
     <section class="hero">
-        <h1>Empower Your Future with Blockchain</h1>
-        <p>Join thousands of users unlocking new financial opportunities. Start today!</p>
+        <h1>Unlock Infinite Possibilities</h1>
+        <p>Join thousands of users and claim your free NFT today!</p>
+        <div class="cta">
+            <button onclick="connectMetaMask()">Connect Wallet</button>
+        </div>
     </section>
-    <div class="offer">
-        <h2>Limited Time Offer</h2>
-        <p id="countdown">Loading countdown...</p>
-        <button>Claim Your Free NFT</button>
-    </div>
     <div class="container">
-        <section id="story" class="story">
-            <h2>Our Story</h2>
-            <p>Founded on the principle of financial inclusion, we strive to make crypto and NFTs accessible to everyone. With cutting-edge technology and a user-first approach, our platform is your gateway to the decentralized economy.</p>
-        </section>
-        <section id="how-it-works" class="how-it-works">
+        <section id="how-it-works" class="section">
             <h2>How It Works</h2>
-            <p>1. Create an account in seconds.<br>2. Connect your wallet seamlessly.<br>3. Unlock your free NFT and explore our marketplace.<br>4. Achieve your financial goals with our innovative tools.</p>
+            <p>Step into the world of crypto and NFTs in just three simple steps:</p>
+            <ul>
+                <li>Connect your wallet securely</li>
+                <li>Claim your free NFT as a welcome bonus</li>
+                <li>Trade and expand your crypto portfolio</li>
+            </ul>
         </section>
-        <section id="testimonials" class="testimonials">
-            <h2>User Success Stories</h2>
+        <section id="features" class="section">
+            <h2>Platform Features</h2>
+            <p>Our platform provides cutting-edge features to enhance your trading experience:</p>
+            <ul>
+                <li>Secure and seamless wallet integration</li>
+                <li>Exclusive NFT drops available only here</li>
+                <li>Intuitive interface designed for both beginners and pros</li>
+                <li>Real-time market updates and analytics</li>
+                <li>Multilingual support for global users</li>
+            </ul>
+        </section>
+        <section id="testimonials" class="section">
+            <h2>User Testimonials</h2>
+            <p>See what our users have to say about their experiences:</p>
             <blockquote>
-                "A game-changer for my finances. Highly recommended!" - Alex B.
+                "The best platform for NFTs! I got my first NFT here, and the process was so smooth." - Alex M.
             </blockquote>
             <blockquote>
-                "Intuitive and rewarding. The best platform out there." - Jamie L.
+                "This platform is a game-changer. I’ve doubled my crypto portfolio in just a month!" - Sarah L.
             </blockquote>
         </section>
-        <section id="wallet" class="wallet-connect">
+        <section id="connect" class="section wallet-connection">
             <h2>Connect Your Wallet</h2>
-            <form>
-                <label for="wallet-key">Enter your Wallet Key:</label>
-                <input type="text" id="wallet-key" placeholder="Your wallet key">
-                <button type="button">Connect Wallet</button>
-            </form>
-        </section>
-        <section id="faq" class="faq">
-            <h2>Frequently Asked Questions</h2>
-            <p><strong>Q:</strong> What is a wallet key?<br><strong>A:</strong> A wallet key allows you to securely access your crypto funds.</p>
-            <p><strong>Q:</strong> How do I claim my free NFT?<br><strong>A:</strong> Simply sign up, connect your wallet, and the NFT will be sent to your account.</p>
+            <p>Use MetaMask or any wallet of your choice to get started:</p>
+            <button onclick="connectMetaMask()">Connect with MetaMask</button>
+            <p id="wallet-address"></p>
         </section>
     </div>
     <footer>
-        <p>&copy; 2024 Crypto & NFT Platform. All rights reserved.</p>
+        <p>&copy; 2024 Crypto & NFT Marketplace. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 </body>
 </html>
